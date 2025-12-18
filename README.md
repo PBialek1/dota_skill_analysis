@@ -48,7 +48,7 @@ current Dota 2 map used during data collection.
 
 <p align="center">
   <img src="assets/typical_moba_map.png" width="45%">
-  <img src="assets/game_map_733.png.png" width="45%">
+  <img src="assets/game_map_733.png" width="45%">
 </p>
 
 *Figure 1 (left): Typical MOBA map layout.  
