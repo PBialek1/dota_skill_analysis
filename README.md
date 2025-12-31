@@ -97,9 +97,9 @@ under tower protection by professional players.
 
 ---
 
-## Feature Engineering
+## Feature Importance Analysis
 
-### Match-Level and Aggregated Player Statistics
+### Inputs: Match-Level and Aggregated Player Statistics
 
 Features include both match-level metrics and player-level statistics aggregated across
 the ten players in each match (mean and standard deviation), such as:
@@ -115,11 +115,9 @@ Aggregation was used to preserve interpretability while keeping the feature spac
 
 ---
 
-## Methodology
+### Skill-Bracket Classifier
 
-### Match Classification
-
-Two interpretable classifiers were trained:
+Two interpretable classifiers were trained to identify the skill bracket of the match:
 
 - **Linear Support Vector Machine (SVM)**
 - **Random Forest**
@@ -133,8 +131,6 @@ These models were chosen because they:
 - Random Forest accuracy: **93.6%**
 
 ---
-
-## Feature Importance Analysis
 
 ### Linear SVM Weights
 
