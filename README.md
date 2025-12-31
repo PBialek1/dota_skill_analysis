@@ -59,6 +59,44 @@ resource collection, and rotations strongly influence match trajectory.
 
 ---
 
+## Positional Data Representation
+
+OpenDota provides player position traces during the laning phase.
+Raw coordinate samples were mapped into spatial matrices representing player occupancy.
+
+<p align="center">
+  <img src="assets/lane_pos.png" width="70%">
+</p>
+
+*Figure 3: Raw positional traces (left) and aggregated spatial heatmap (right).*
+
+These matrices form the basis for spatial analysis using Principal Component Analysis (PCA).
+
+---
+
+## Spatial Analysis: PCA of Laning Positions
+
+### Principal Components by Role
+
+Player position matrices were separated by estimated role, flattened, and analyzed using PCA.
+This produces “eigen-position” maps capturing dominant spatial behaviors.
+
+<p align="center">
+  <img src="assets/eigen0_comp.png" width="90%">
+</p>
+
+*Figure 6: Principal components for Dire offlane positioning (professional, amateur, and difference).*
+
+Key spatial differences:
+- Professionals occupy **tighter regions around creep waves**
+- Professionals roam to mid lane more frequently
+- Amateurs exhibit broader, less focused spatial dispersion
+
+Subsequent components reinforce these patterns, including more frequent fallback positioning
+under tower protection by professional players.
+
+---
+
 ## Feature Engineering
 
 ### Match-Level and Aggregated Player Statistics
@@ -74,21 +112,6 @@ the ten players in each match (mean and standard deviation), such as:
 - Gold, XP, and damage metrics
 
 Aggregation was used to preserve interpretability while keeping the feature space tractable.
-
----
-
-## Positional Data Representation
-
-OpenDota provides player position traces during the laning phase.
-Raw coordinate samples were mapped into spatial matrices representing player occupancy.
-
-<p align="center">
-  <img src="assets/lane_pos.png" width="70%">
-</p>
-
-*Figure 3: Raw positional traces (left) and aggregated spatial heatmap (right).*
-
-These matrices form the basis for spatial analysis using Principal Component Analysis (PCA).
 
 ---
 
@@ -146,29 +169,6 @@ Highly influential features:
 - Lane efficiency
 
 The variance across trees suggests multiple viable behavioral strategies within professional play.
-
----
-
-## Spatial Analysis: PCA of Laning Positions
-
-### Principal Components by Role
-
-Player position matrices were separated by estimated role, flattened, and analyzed using PCA.
-This produces “eigen-position” maps capturing dominant spatial behaviors.
-
-<p align="center">
-  <img src="assets/eigen0_comp.png" width="90%">
-</p>
-
-*Figure 6: Principal components for Dire offlane positioning (professional, amateur, and difference).*
-
-Key spatial differences:
-- Professionals occupy **tighter regions around creep waves**
-- Professionals roam to mid lane more frequently
-- Amateurs exhibit broader, less focused spatial dispersion
-
-Subsequent components reinforce these patterns, including more frequent fallback positioning
-under tower protection by professional players.
 
 ---
 
